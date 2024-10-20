@@ -3,6 +3,7 @@ dotenv.config()
 import express from "express";
 import cookieParser from 'cookie-parser'
 import cors from 'cors'
+app.use(cors());
 const app = express()
 
 app.use(express.json())
@@ -14,8 +15,8 @@ import todo from './routes/todo.js'
 app.use('/user', user)
 app.use('/todo', todo)
 
-app.use(cors({
-    origin: 'https://himanshi-todoapp.netlify.app/',
-}))
+// app.use(cors({
+//     origin: 'https://himanshi-todoapp.netlify.app/',
+// }))
 
 export default app
